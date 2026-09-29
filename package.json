@@ -1,0 +1,12 @@
+{
+  "name": "train-book-easy",
+  "version": "1.0.0",
+  "description": "Professional Train Travel Search & Booking Assistance Website",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": ["train", "travel", "stations", "gtfs", "routes", "booking-assistance"],
+  "author": "Train Book Easy LLC",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,1489 @@
+/* ==========================================================================
+   RailAssist Direct - Component Specific UI Stylesheet (Enhanced)
+   ========================================================================== */
+
+/* --- 1. Train Search Form Component --- */
+.search-card-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.05);
+  border: 1px solid var(--border-light);
+  padding: 32px 36px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Professional Search Card Header */
+.search-card-header {
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.search-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.search-card-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+
+.search-card-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.search-form-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 2.2fr 1.6fr 1.6fr auto;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.form-field-group {
+  position: relative;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.field-input-box {
+  width: 100%;
+  height: 52px;
+  padding: 0 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.field-input-box:focus-within,
+.field-input-box:hover {
+  border-color: #177FA6;
+  background: #ffffff;
+}
+
+.field-input-box:focus-within {
+  box-shadow: 0 0 0 3px rgba(23, 127, 166, 0.16);
+}
+
+.field-prefix-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #177FA6;
+}
+
+.field-suffix-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.field-input-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.field-input-box input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Professional Passenger Selector Styling */
+.passenger-field-group {
+  position: relative;
+}
+
+.passenger-input-box {
+  cursor: pointer;
+  user-select: none;
+}
+
+.passenger-current-value {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.passenger-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 290px;
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+  padding: 18px;
+  z-index: 600;
+  display: none;
+  animation: fadeInDown 0.15s ease-out;
+}
+
+.passenger-popover.open {
+  display: block;
+}
+
+.passenger-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.passenger-popover-title {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.passenger-popover-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.passenger-stepper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.passenger-type-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.passenger-type-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.passenger-type-sub {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.stepper-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepper-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-medium);
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stepper-btn:hover:not(:disabled) {
+  border-color: #177FA6;
+  color: #177FA6;
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+.stepper-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.stepper-count-display {
+  font-size: 1.15rem;
+  font-weight: 800;
+  min-width: 24px;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.passenger-quick-chips {
+  margin-bottom: 16px;
+}
+
+.quick-chips-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.chips-list {
+  display: flex;
+  gap: 8px;
+}
+
+.passenger-chip {
+  flex: 1;
+  height: 34px;
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  background: var(--bg-subtle);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.passenger-chip:hover {
+  border-color: #177FA6;
+  color: #177FA6;
+}
+
+.passenger-chip.active {
+  background: #177FA6;
+  color: #ffffff;
+  border-color: #177FA6;
+}
+
+.passenger-popover-footer {
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+
+.passenger-done-btn {
+  width: 100%;
+  height: 38px;
+  padding: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  background: #177FA6 !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-sm);
+}
+
+.passenger-done-btn:hover {
+  background: #126585 !important;
+}
+
+/* Primary Search Trains Submit Button (Simple #177FA6 Combination) */
+.btn-search-submit {
+  height: 52px;
+  padding: 0 28px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+  background: #177FA6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(23, 127, 166, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.btn-search-submit:hover {
+  background: #126585 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(23, 127, 166, 0.45);
+}
+
+.btn-search-submit:active {
+  transform: translateY(0);
+}
+
+.validation-error-msg {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  font-size: 0.76rem;
+  color: var(--accent-error);
+  font-weight: 600;
+  display: none;
+}
+
+.validation-error-msg.visible {
+  display: block;
+}
+
+/* Secondary Assistance Bar below Search */
+.search-assistance-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.assistance-info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.assistance-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assistance-agent-tag {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.assistance-call-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #177FA6;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.assistance-call-link:hover {
+  color: #126585;
+  text-decoration: underline;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- 2. Station Autocomplete Dropdown --- */
+.autocomplete-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 500;
+  display: none;
+}
+
+.autocomplete-dropdown.open {
+  display: block;
+  animation: fadeInDown 0.15s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.autocomplete-item {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.12s ease;
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-item:hover, .autocomplete-item.active {
+  background-color: var(--primary-light);
+}
+
+.autocomplete-station-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.autocomplete-station-location {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.station-code-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-subtle);
+  color: var(--primary);
+  border: 1px solid var(--border-medium);
+}
+
+/* --- 3. Search Loading State --- */
+.search-loading-container {
+  max-width: 680px;
+  margin: 32px auto 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--border-medium);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.loading-steps-list {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.loading-step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  padding: 6px 0;
+}
+
+.loading-step-check {
+  color: var(--accent-success);
+  font-weight: bold;
+}
+
+/* /* --- 4. Search Results - Creative Animated Train Booking Popup Modal --- */
+.booking-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: modalFadeIn 0.22s ease-out;
+}
+
+.booking-modal-backdrop.closing {
+  animation: modalFadeOut 0.18s ease-in forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.booking-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 490px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px -10px rgba(15, 23, 42, 0.35), 0 0 1px 1px rgba(15, 23, 42, 0.08);
+  border: 1.5px solid #bce3f2;
+  overflow: hidden;
+  animation: modalPopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+
+@keyframes modalPopIn {
+  from { opacity: 0; transform: scale(0.9) translateY(16px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 20;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-btn:hover {
+  background: #ffffff;
+  color: var(--text-main);
+  transform: scale(1.08);
+}
+
+/* 1. Animated Moving Train Scene at Top */
+.modal-train-scene {
+  position: relative;
+  height: 105px;
+  width: 100%;
+  background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 65%, #e2e8f0 100%);
+  overflow: hidden;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.deal-live-badge {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #bce3f2;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #177FA6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.live-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: pulse 1.4s infinite;
+}
+
+.train-cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  height: 12px;
+  width: 44px;
+}
+
+.cloud-1 {
+  top: 14px;
+  right: 60px;
+  animation: cloudDrift 16s linear infinite;
+}
+
+.cloud-2 {
+  top: 28px;
+  left: 30px;
+  width: 56px;
+  animation: cloudDrift 22s linear infinite reverse;
+}
+
+@keyframes cloudDrift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+
+/* Tracks */
+.train-track-strip {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.track-rail {
+  height: 2px;
+  background: #64748b;
+  width: 100%;
+}
+
+.track-sleepers {
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #94a3b8, #94a3b8 4px, transparent 4px, transparent 12px);
+  width: 100%;
+}
+
+/* Speeding Train Vehicle */
+.train-moving-vehicle {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 180px;
+  height: 52px;
+  animation: trainCruise 4.2s linear infinite;
+  will-change: transform;
+}
+
+@keyframes trainCruise {
+  0% {
+    transform: translateX(-190px);
+  }
+  100% {
+    transform: translateX(520px);
+  }
+}
+
+.speed-train-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* 2. Modal Body Content */
+.modal-body-content {
+  padding: 18px 20px 20px;
+  text-align: center;
+}
+
+.modal-deals-header {
+  margin-bottom: 12px;
+}
+
+.deals-highlight-pill {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #177FA6;
+  background: rgba(23, 127, 166, 0.1);
+  border: 1px solid #bce3f2;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 4px;
+}
+
+.dream-vacation-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+/* 3. Journey Summary */
+.modal-journey-summary {
+  margin-bottom: 12px;
+}
+
+.modal-journey-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.modal-route-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.route-stop-name {
+  word-break: break-word;
+}
+
+.route-sep-arrow {
+  color: #177FA6;
+}
+
+.modal-route-date-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* 4. Queue Notice */
+.modal-queue-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.queue-check-badge {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.queue-main-text {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #14532d;
+}
+
+.queue-sub-text {
+  font-size: 0.8rem;
+  color: #166534;
+  margin-top: 1px;
+}
+
+/* 5. Agent Card & Big CTA Button */
+.modal-agent-cta-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1.5px solid #bce3f2;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.agent-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.agent-avatar-wrap {
+  width: 52px;
+  height: 52px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.agent-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.agent-live-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 13px;
+  height: 13px;
+  background: #10b981;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.agent-priority-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #177FA6;
+  letter-spacing: 0.04em;
+}
+
+.agent-pitch-text {
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.35;
+  margin: 2px 0 0;
+}
+
+/* Primary High-Impact CTA Button */
+.modal-tfn-btn {
+  width: 100%;
+  height: 56px;
+  background: #177FA6 !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 20px rgba(23, 127, 166, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-tfn-btn:hover {
+  background: #126585 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(23, 127, 166, 0.55);
+}
+
+.btn-phone-ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-label-wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.btn-label-call {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #d8f1fa;
+}
+
+.btn-label-phone {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.modal-tfn-submeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tfn-badge {
+  color: #0d9488;
+}
+
+.tfn-contact-alt a {
+  color: #177FA6;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+/* --- 5. Featured Popular Routes Grid (Strictly 3 Columns with Images & High-Converting CTAs) --- */
+.featured-routes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.featured-route-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.featured-route-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.featured-route-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.featured-route-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.featured-route-card:hover .featured-route-img {
+  transform: scale(1.05);
+}
+
+.route-corridor-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.route-highlight-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(13, 148, 136, 0.9);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.featured-route-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.featured-route-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.route-arrow-icon {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+
+.featured-route-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.featured-route-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.route-cta-btn {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+}
+
+.route-call-mini-btn {
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+}
+
+/* --- 6. Step Icon Badges for How It Works --- */
+.step-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+/* --- 7. Call Now CTA Mid-Page Block --- */
+.call-now-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 64px 0;
+  border-radius: var(--radius-lg);
+  margin: 64px 0;
+  text-align: center;
+}
+
+.call-now-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.call-now-badge {
+  display: inline-block;
+  background: rgba(13, 148, 136, 0.2);
+  border: 1px solid rgba(13, 148, 136, 0.4);
+  color: #2dd4bf;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.call-now-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.call-now-text {
+  font-size: 1.08rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.call-now-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-call-large {
+  padding: 16px 36px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  border-radius: var(--radius-md);
+}
+
+/* --- 8. Trust & Feature Cards Grid --- */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.trust-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.trust-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.trust-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.trust-card-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --- 9. How It Works (3 Steps) --- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.step-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  position: relative;
+  text-align: center;
+}
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-border);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --- 10. Station Directory Cards & Pagination --- */
+.stations-search-box {
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.stations-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 18px;
+}
+
+.station-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.station-card-name {
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+}
+
+.station-card-loc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.station-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.pagination-btn {
+  padding: 8px 14px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* --- 11. FAQ Accordion --- */
+.faq-accordion {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 24px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: transparent;
+}
+
+.faq-question:hover {
+  background-color: var(--bg-subtle);
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  color: var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 24px 20px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* --- 12. Responsive Overrides --- */
+@media (max-width: 1024px) {
+  .search-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-search-submit {
+    grid-column: 1 / -1;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-card-container {
+    padding: 20px 14px;
+    border-radius: 14px;
+    margin: 0 auto;
+  }
+  .search-card-header {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+  }
+  .search-header-badge {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.3;
+  }
+  .search-card-title {
+    font-size: 1.35rem;
+  }
+  .search-card-subtitle {
+    font-size: 0.85rem;
+  }
+  .search-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .field-input-box {
+    height: 52px;
+  }
+  .passenger-popover {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  .btn-search-submit {
+    width: 100%;
+    height: 52px;
+    font-size: 1.05rem;
+  }
+  /* Mobile Modal Dialog Overrides */
+  .booking-modal-card {
+    max-width: 95%;
+    border-radius: 18px;
+  }
+  .modal-train-scene {
+    height: 90px;
+  }
+  .train-moving-vehicle {
+    width: 150px;
+    height: 44px;
+    bottom: 7px;
+  }
+  .modal-body-content {
+    padding: 14px 14px 16px;
+  }
+  .dream-vacation-title {
+    font-size: 1.05rem;
+  }
+  .modal-journey-title {
+    font-size: 1.15rem;
+  }
+  .modal-route-chip {
+    font-size: 0.86rem;
+    padding: 6px 10px;
+  }
+  .modal-agent-cta-card {
+    padding: 12px;
+  }
+  .modal-tfn-btn {
+    height: 52px;
+    gap: 10px;
+  }
+  .btn-label-phone {
+    font-size: 1.2rem;
+  }
+  .search-assistance-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .assistance-info-wrap {
+    justify-content: center;
+    font-size: 0.82rem;
+  }
+  .assistance-cta-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+  .assistance-call-link {
+    font-size: 1rem;
+    padding: 8px 12px;
+    background: var(--primary-light);
+    border-radius: var(--radius-sm);
+  }
+  .call-now-title {
+    font-size: 1.8rem;
+  }
+  .featured-routes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
