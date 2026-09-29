@@ -327,7 +327,7 @@ export function renderTermsPage() {
                 </div>
                 <div>
                   <strong style="color: var(--text-main);">Secondary Support Line:</strong><br>
-                  <a href="tel:18774869036" style="color: var(--text-main); font-weight: 600; text-decoration: none;">
+                  <a href="tel:18888216270" style="color: var(--text-main); font-weight: 600; text-decoration: none;">
                     ${SITE_CONFIG.SUPPORT_PHONE_ALT}
                   </a>
                 </div>
