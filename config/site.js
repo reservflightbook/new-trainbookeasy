@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
   // Formatted for display and tel: URI
   PHONE_NUMBER: "1-888-821-6270",
   PHONE_HREF: "tel:18888216270",
-  SUPPORT_PHONE_ALT: "+1-877-486-9036",
+  SUPPORT_PHONE_ALT: "+1-888-821-6270",
   EMAIL: "support@trainbookeasy.com",
   
   // Physical Business Presence
